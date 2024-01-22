@@ -23,10 +23,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, EmpAddEditComponent, LoginComponent, SignupComponent, HomeComponent],
+  declarations: [AppComponent, EmpAddEditComponent, LoginComponent, SignupComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

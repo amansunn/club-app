@@ -6,8 +6,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CoreService } from './core/core.service';
-import { Route, Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-root',
@@ -36,17 +34,11 @@ export class AppComponent implements OnInit {
   constructor(
     private _dialog: MatDialog,
     private _empService: EmployeeService,
-    private _coreService: CoreService,
-    private router:Router
+    private _coreService: CoreService
   ) {}
 
   ngOnInit(): void {
-    if(localStorage.getItem('isloggedin')){
-      this.router.navigate(['home']);
-      this.getEmployeeList();
-    }else {
-      this.router.navigate(['login']);
-    }
+    this.getEmployeeList();
   }
 
   openAddEditEmpForm() {
