@@ -1,20 +1,20 @@
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EmpAddEditComponent } from './emp-add-edit/emp-add-edit.component';
-import { EmployeeService } from './services/employee.service';
+import { EmpAddEditComponent } from '../emp-add-edit/emp-add-edit.component';
+import { EmployeeService } from '../services/employee.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { CoreService } from './core/core.service';
-import { Route, Router } from '@angular/router';
+import { CoreService } from '../core/core.service';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class AppComponent implements OnInit {
+export class HomeComponent {
   displayedColumns: string[] = [
     'id',
     'firstName',
@@ -36,17 +36,11 @@ export class AppComponent implements OnInit {
   constructor(
     private _dialog: MatDialog,
     private _empService: EmployeeService,
-    private _coreService: CoreService,
-    private router:Router
+    private _coreService: CoreService
   ) {}
 
   ngOnInit(): void {
-    if(localStorage.getItem('isloggedin')){
-      this.router.navigate(['home']);
-      this.getEmployeeList();
-    }else {
-      this.router.navigate(['login']);
-    }
+    this.getEmployeeList();
   }
 
   openAddEditEmpForm() {

@@ -21,6 +21,6 @@ export class EmployeeService {
   }
 
   deleteMember(id: number): Observable<any> {
-    return this._http.delete(`https://aman-app-backend.onrender.com/${id}`);
+    return this._http.delete(`https://aman-app-backend.onrender.com/employees/${id}`);
   }
 }

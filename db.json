@@ -6,11 +6,18 @@
       "author": "typicode"
     }
   ],
-  "comments": [
+  "signupUsers": [
     {
       "id": 1,
       "body": "some comment",
       "postId": 1
+    },
+    {
+      "id": "ee61",
+      "fullname": "jov",
+      "email": "job@gmail.com",
+      "password": "123",
+      "mobile": 98888
     }
   ],
   "profile": {
